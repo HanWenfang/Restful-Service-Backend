@@ -2,6 +2,9 @@
 #include <Poco/Thread.h>
 #include <signal.h>
 #include <unistd.h>
+#include <Poco/Exception.h>
+
+using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -15,9 +18,20 @@ int main(int argc, char *argv[])
 	sigaddset(&newmask, SIGTERM);
 	sigprocmask(SIG_BLOCK, &newmask, &oldmask);
 
+	HTTPServer http_server(2);
+	try
+	{
+		http_server.run();
+	}
+	catch (Poco::NoThreadAvailableException &e)
+	{
+		cout << e.displayText() << endl;
+	}
+	catch (Poco::Exception &e)
+	{
+		cout << e.displayText() << endl;
+	}
 	
-	::HTTPServer http_server;
-	http_server.run();
 
 
 	int sig;
