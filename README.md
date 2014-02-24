@@ -1,7 +1,7 @@
-Restful-Service-Backend
+Restful-Service-Backend-Framework
 =======================
 
-A Restful Service Backend
+A Restful Service Backend Framework
 
 Super Capacity!
 
@@ -19,7 +19,7 @@ one -> many -> queue -> many
 
 
 
-NotificationQueue is Dead!Cry! Because The HTTP Server FrameWork Says You Must Deal With 
+NotificationQueue is Dead!Cry! Because The HTTP Server Framework Says You Must Deal With 
 http-request-response In The RequestHandle.
 
 
@@ -33,6 +33,19 @@ So Now It is:
 	 defaultThreadPool [min=2, max=16]
 
 one -> many -|stop here
+
+Framework:
+
+
+
+
+
+
+
+But..
+
+I Believe You Can Make It More Powerful! Like request processing etc.
+
 
 
 
